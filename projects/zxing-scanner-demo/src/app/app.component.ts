@@ -18,9 +18,7 @@ export class AppComponent {
 
   formatsEnabled: BarcodeFormat[] = [
     BarcodeFormat.CODE_128,
-    BarcodeFormat.DATA_MATRIX,
-    BarcodeFormat.EAN_13,
-    BarcodeFormat.QR_CODE,
+    BarcodeFormat.EAN_13
   ];
 
   hasDevices: boolean;

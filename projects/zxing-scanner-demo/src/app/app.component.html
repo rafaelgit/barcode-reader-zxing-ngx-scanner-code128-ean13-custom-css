@@ -1,4 +1,4 @@
-<div class="scanner-shell" [hidden]="!hasDevices">
+<div class="scanner-shell">
 
   <mat-menu #appMenu="matMenu">
     <mat-selection-list>
@@ -27,9 +27,17 @@
     </button>
   </header>
 
-  <zxing-scanner [torch]="torchEnabled" [device]="deviceCurrent" (deviceChange)="onDeviceChange($event)" (scanSuccess)="onCodeResult($event)"
-    [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
-    (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+  <div class="container">
+    <zxing-scanner class="gradient" [torch]="torchEnabled" [device]="deviceCurrent" (deviceChange)="onDeviceChange($event)" (scanSuccess)="onCodeResult($event)"
+      [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
+      (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+      <div class="top-left"></div>
+      <div class="top-right"></div>
+      <div class="bottom-left"></div>
+      <div class="bottom-right"></div>
+      <div class="centered"></div>    
+  </div>
+
 
   <section class="results" *ngIf="qrResultString">
     <div>
